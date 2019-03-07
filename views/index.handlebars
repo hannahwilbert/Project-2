@@ -5,7 +5,7 @@
 			  <h1 class="display-3 text-center" style="font-weight: 900; font-size: 3em;">GigEquipt</h1>
 			  <hr class="my-4">
 			  <p class="lead">Simple application that performs CRUD operations to a mySQL database via JawsDB deployed on heroku.</p>
-			  <p class="lead">Retrieves data from the database (Available Burgers), updates burgers value when devoured, creates a burger (Add a burger), &amp; deletes all data from the database (Delete button) using the ORM Sequelize.</p>
+			  <p class="lead">Retrieves data from the database (Needed Equiptment), updates equiptment value when packed, creates equiptment list (Add equiptment), &amp; deletes all data from the database (Delete button) using the ORM Sequelize.</p>
 			</div>
 		</div>
 		</div>
@@ -26,7 +26,7 @@
 									<form method="POST" action="equiptment/{{id}}" class="button-size" style="line-height: 0px;">
 										<input type="hidden" name="equiptment_id" type="text" value={{this.id}}>
 										<br>
-										<button type="sumbit" class="btn btn-default btn-success">Devour It!</button>
+										<button type="sumbit" class="btn btn-default btn-success">Pack it!</button>
 									</form>
 								</div>
 							</div>
@@ -37,7 +37,7 @@
 		</div>
 		<div class="col-xs-6 text-center" class="task">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Devoured Burgers</div>
+				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Packed Equiptment</div>
 				<div class="panel-body">
 					{{#each equiptment_data}}
 						{{#if this.packed}}
@@ -52,7 +52,7 @@
 	<div class="row">
 		<div class="col-xs-6 text-center enter_section">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Add a burger</div>
+				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">What equiptment do you need?</div>
 				<div class="panel-body">
 					<form action="/add" method="POST">
 						<div class="input-group">
@@ -68,7 +68,7 @@
 		</div>
 		<div class="col-xs-6 text-center enter_section">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Clear all burgers!</div>
+				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Clear all Equiptment!</div>
 				<div class="panel-body">
 					<form action="/delete" method="POST">
 						<button type="sumbit" class="btn btn-danger" id="text-enter-button">Delete</button>
