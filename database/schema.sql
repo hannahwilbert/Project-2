@@ -4,7 +4,7 @@ USE equiptments_db;
 CREATE TABLE equiptments (
 	id int NOT NULL AUTO_INCREMENT,
     equiptment_name varchar(255) NOT NULL,
-    packed BOOL DEFAULT false,
+    packed BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
 
