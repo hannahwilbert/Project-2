@@ -6,7 +6,7 @@ var config             = require("./config/extra-config");
 // Sets up the Express App
 // =============================================================
 var app = express();
-var PORT = process.env.PORT || 8300;
+var PORT = process.env.PORT || 8400;
 
 // Requiring our models for syncing
 var db = require("./models");

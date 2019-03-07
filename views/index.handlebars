@@ -1,32 +1,30 @@
-	<div class="jumbotron">
-		<div class="container">
+<div class="container">
 		<div class="row head">
 			<div class="col-xs-12">
-			  <h1 class="display-3 text-center" style="font-weight: 900; font-size: 3em;">GigEquipt</h1>
-			  <hr class="my-4">
-			  <p class="lead">Simple application that performs CRUD operations to a mySQL database via JawsDB deployed on heroku.</p>
-			  <p class="lead">Retrieves data from the database (Needed Equiptment), updates equiptment value when packed, creates equiptment list (Add equiptment), &amp; deletes all data from the database (Delete button) using the ORM Sequelize.</p>
-			</div>
+			  <img id = "background-img" src = "/assets/img/Untitled-11.png">
 		</div>
 		</div>
-	</div>
+        </div>
 <div class="container">
+    <div class="things">
 	<div class="row">
 		<div class="col-xs-6 text-center" class="task">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Needed Equiptment</div>
+				<div class="panel-heading" style="background-color: rgb(184, 184, 184);font-family: 'Sue Ellen Francisco', cursive;font-weight: 900; font-size: 2em;">Equiptment List </div>
 				<div class="panel-body">
 					{{#each equiptment_data}}
 						{{#unless this.packed}}
 							<div class="row">
 								<div class="col-xs-9 text-left" style="font-weight: bold;">
-									<pre style="font-size: 1.25em;"> {{this.id}}. {{this.equiptment_name}}</pre>
+									<pre style=" font-family: 'Sue Ellen Francisco', cursive; font-size: 1.90em;">{{this.equiptment_name}} </pre>
 								</div>
 								<div class="col-xs-3 text-center">
 									<form method="POST" action="equiptment/{{id}}" class="button-size" style="line-height: 0px;">
 										<input type="hidden" name="equiptment_id" type="text" value={{this.id}}>
 										<br>
-										<button type="sumbit" class="btn btn-default btn-success">Pack it!</button>
+										<button type="sumbit" class="btn btn-default btn-success"><i class="fas fa-check"></i>
+
+ Pack it!</button>
 									</form>
 								</div>
 							</div>
@@ -37,11 +35,13 @@
 		</div>
 		<div class="col-xs-6 text-center" class="task">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Packed Equiptment</div>
+				<div class="panel-heading" style="background-color: rgb(184, 184, 184);padding:15px;font-weight: 900; font-size: 1.5em;">Gig Bag <i class="fas fa-shopping-bag"></i>
+
+</div>
 				<div class="panel-body">
 					{{#each equiptment_data}}
 						{{#if this.packed}}
-							<input class="form-control" type="text" placeholder="{{this.id}}. {{this.equiptment_name}}" readonly>
+							<input class="form-control" type="text" placeholder="{{this.equiptment_name}} " readonly>
 						{{/if}}
 					{{/each}}
 				</div>
@@ -52,7 +52,9 @@
 	<div class="row">
 		<div class="col-xs-6 text-center enter_section">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">What equiptment do you need?</div>
+				<div class="panel-heading" style="background-color: rgb(184, 184, 184); font-weight: 900; font-size: 1.5em;">What equiptment do you need? <i class="fas fa-pencil-alt"></i>
+
+</div>
 				<div class="panel-body">
 					<form action="/add" method="POST">
 						<div class="input-group">
@@ -68,7 +70,7 @@
 		</div>
 		<div class="col-xs-6 text-center enter_section">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="font-weight: 900; font-size: 1.5em;">Clear all Equiptment!</div>
+				<div class="panel-heading" style="background-color: rgb(184, 184, 184);font-weight: 900; font-size: 1.5em;">Clear All!</div>
 				<div class="panel-body">
 					<form action="/delete" method="POST">
 						<button type="sumbit" class="btn btn-danger" id="text-enter-button">Delete</button>
@@ -77,4 +79,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>
