@@ -1,19 +1,14 @@
 #background-img {
-   width: 100%;
-	position: absolute;
-	top:390px;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: auto;
+    width: 100%;
 }
 
 .things {
-    margin-top: 550px;
+    margin-top: 5%;
+    margin-bottom:200px;
 }
 
 body {
-    background-color: rgb(2, 3, 26);
+    background-image: linear-gradient(rgb(1, 1, 17), rgb(39, 35, 102));
 }
 
 .panel {
