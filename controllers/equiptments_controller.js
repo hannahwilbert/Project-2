@@ -1,19 +1,19 @@
 var db = require('../models');
 var express = require('express');
-var router  = express.Router();
+var router = express.Router();
 
-// Displays all burgers available from the mySQL db
-router.get('/', function(req,res) {
+// Displays all equiptment available from the mySQL db
+router.get('/', function (req, res) {
   db.Equiptment.findAll({
-  }).then(function(equiptment_data){
+  }).then(function (equiptment_data) {
     res.render('index', {
       equiptment_data
-    }); 
+    });
   })
 })
 
-// Devours burger by updating the devoured boolean to true in the mySQL db
-router.post('/equiptment/:id', function(req,res){
+// Packs equiptment by updating the packed boolean to true in the mySQL db
+router.post('/equiptment/:id', function (req, res) {
   console.log(req.params.id);
   db.Equiptment.update(
     {
@@ -22,28 +22,28 @@ router.post('/equiptment/:id', function(req,res){
     {
       where: {
         id: req.params.id
-    }
-  }).then(function() {
-    res.redirect('/');
-  });
+      }
+    }).then(function () {
+      res.redirect('/');
+    });
 });
 
-// Add a new burger to the mySQL db
-router.post('/add', function(req,res) {
+// Add a new equiptment to the mySQL db
+router.post('/add', function (req, res) {
   console.log(req.body.equiptment_name + " equiptment added to database!");
   db.Equiptment.create({
     equiptment_name: req.body.equiptment_name,
     packed: 0
-  }).then(function(){
+  }).then(function () {
     res.redirect('/');
   });
 });
 
-// Deletes all burgers in the mySQL db
-router.post('/delete', function(req,res) {
+// Deletes all equiptment in the mySQL db
+router.post('/delete', function (req, res) {
   db.Equiptment.destroy({
     where: {}
-  }).then(function(){
+  }).then(function () {
     res.redirect('/');
   });
 });
